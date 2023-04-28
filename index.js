@@ -14,6 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
+// view engine
+app.set('view engine', 'ejs');
+
+
 // auth0
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
