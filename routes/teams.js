@@ -1,16 +1,15 @@
 // router 
 const router = require('express').Router();
-const team = require('../controllers/teams')
+const teams = require('../controllers/Teams/teams')
+const { requiresAuth } = require('express-openid-connect');
 
-// controllers
-const teams = require('../controllers/teams');
 
-router.get('/', (req, res) => {
-    res.send('Teams route');
+router.get('/',  requiresAuth(),(req, res) => {
+    res.render('test');
 });
 
 // create team
-router.post('/create',teams.createTeam);
+router.post('/create', teams.createTeam);
 
 // router.post('/create',teams.createTeam);
 
