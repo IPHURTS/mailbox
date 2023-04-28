@@ -21,6 +21,8 @@ app.use(auth(config));
 // Routes
 app.use('/', require('./routes/index'));
 app.use("/auth", require("./routes/auth"));
+app.use('/teams', require('./routes/teams'));
+
 
 app.listen(PORT, () => { console.log(`Server running on port ${PORT}`); 
 });
