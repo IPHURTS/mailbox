@@ -5,7 +5,9 @@ const {admin} = require('../controllers/adminController')
 // declaring routes
 // req.isAuthenticated is provided from the auth router
 router.get('/', (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+    // send file in ../jodoo/public/index.html /workspaces/mailbox/jodoo/public/index.html
+    res.sendFile('/workspaces/mailbox/jodoo/public/index.html');
+
   });
 
   router.get('/admin', admin)

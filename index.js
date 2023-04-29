@@ -17,6 +17,9 @@ app.use(express.static('public'));
 // view engine
 app.set('view engine', 'ejs');
 
+// static folder
+app.use(express.static('./jodoo/public/'));
+
 
 // auth0
 // auth router attaches /login, /logout, and /callback routes to the baseURL
@@ -26,6 +29,7 @@ app.use(auth(config));
 app.use('/', require('./routes/index'));
 app.use("/auth", require("./routes/auth"));
 app.use('/teams', require('./routes/teams'));
+app.use('/waitlist', require('./routes/waitlist'));
 
 
 app.listen(PORT, () => { console.log(`Server running on port ${PORT}`); 
