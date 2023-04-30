@@ -1,13 +1,14 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const {auth, config} = require('./config/auth0Config');
+dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT ;
 
 const app = express();
 
 // Load env vars
-dotenv.config();
+
 
 // middleware
 app.use(express.json());

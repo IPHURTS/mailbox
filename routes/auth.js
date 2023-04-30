@@ -5,7 +5,7 @@ const auth = require('../controllers/authController')
 
 // declaring routes
 router.get('/', (req, res) => {
-    res.send('Hello Auth!');
+    res.send('Hello Auth!, <a href="/login">Login</a>');
 });
 
 router.get('/profile', requiresAuth(), (req, res) => {
